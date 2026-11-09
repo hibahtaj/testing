@@ -1,24 +1,14 @@
 <!DOCTYPE html>
-<html><body>
-<h2>Registration Form</h2>
-<form action="/submit" method="POST" onsubmit="return validateForm()" novalidate>
-    Name: <input id="name" name="name"><br>
-    Email: <input id="email" name="email" type="email"><br>
-    Password: <input id="password" type="password" name="password"><br>
-    <button id="submit" type="submit">Register</button>
-</form>
-{% if error %}<p>{{ error }}</p>{% endif %}
-<script>
-function validateForm() {
-    if (!document.getElementById('name').value.trim()) {
-        alert('Username cannot be empty');
-        return false;
-    }
-    if (!document.getElementById('password').value) {
-        alert('Password cannot be empty');
-        return false;
-    }
-    return true;
-}
-</script>
-</body></html>
+<html>
+<body>
+    <h2>Registration Form</h2>
+
+    <form action="/submit" method="POST">
+        Name: <input type="text" id="name" name="name" required><br>
+        Email: <input type="email" id="email" name="email"><br>
+        Password: <input type="password" id="password" name="password" required><br>
+
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
